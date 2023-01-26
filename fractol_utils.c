@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 11:03:19 by abarriga          #+#    #+#             */
-/*   Updated: 2023/01/20 11:55:51 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:31:23 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	legend_info(void)
 	write(1, "\t\t-Julia       ->> j", 20);
 	write(1, "   (If you choose julia you need to choose the type:"
 		" 0, 1, 2, 3.)\n", 67);
-	write(1, "\t\t-Burningship ->> m\n\n", 22);
+	write(1, "\t\t-Burningship ->> b\n\n", 22);
 	exit(EXIT_FAILURE);
 }
 
@@ -65,11 +65,10 @@ void	check_fractal(t_d *variables, int argc, char **argv)
 	else
 		legend_info();
 	if (argv[2][0] == 'm' || argv[2][0] == 'j' || argv[2][0] == 'b')
-	{
 		variables->fractal = argv[2][0];
-		printf("%d", argc);
-	}
 	else
+		legend_info();
+	if (variables->fractal == 'j' && argc != 4)
 		legend_info();
 	if (variables->fractal == 'j')
 	{
@@ -78,7 +77,9 @@ void	check_fractal(t_d *variables, int argc, char **argv)
 			variables->julia_type = argv[3][0];
 		else
 			legend_info();
-	}	
+	}
+	if (((variables->fractal == 'm' || variables->fractal == 'b')) && argc > 3)
+		legend_info();
 }
 
 void	position_mouse_hook(double xpos, double ypos, void *param)

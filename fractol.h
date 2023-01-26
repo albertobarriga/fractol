@@ -6,14 +6,14 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 13:04:58 by abarriga          #+#    #+#             */
-/*   Updated: 2023/01/20 11:49:49 by abarriga         ###   ########.fr       */
+/*   Updated: 2023/01/26 13:14:18 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# include "MLX42/MLX42.h"
+# include "MLX42/include/MLX42/MLX42.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
