@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  kasm-desktop:
+    container_name: ubuntu-desktop
+    build: .
+    ports:
+      - "6901:6901"
+    environment:
+      - VNC_PW=password
+    shm_size: '512m'
